@@ -4,17 +4,13 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
-// import tourRoute from './routes/tours.js'
+import tourRoute from './routes/tours.js'
 
 dotenv.config();  
 
 const app = express();
 const port = process.env.PORT || 8000;  
 
-// Enable middleware
-app.use(cors());
-app.use(cookieParser());
-app.use(express.json());  
 
 
 // database connection
@@ -37,7 +33,12 @@ app.get('/', (req, res) => {
     res.send("API is working");
 });
 
-// app.use('/tours', tourRoute);
+// middleware
+app.use(cors());
+app.use(cookieParser());
+app.use(express.json());  
+app.use(cookieParser());
+app.use('/tours', tourRoute);
 
 app.listen(port, async () => {
     await connect();  

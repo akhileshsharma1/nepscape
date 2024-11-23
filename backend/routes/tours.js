@@ -1,9 +1,9 @@
 import express from 'express';
-import { createTour } from '../controllers/tourController';
+import { createTour } from '../controllers/tourController.js';  // Add .js extension
 
 const router = express.Router();
 
-//create new tour
-router.post('/', createTour)
+// Create new tour
+router.post('/', createTour);
 
-export default router
+export default router;
