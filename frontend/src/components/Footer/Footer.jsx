@@ -39,6 +39,9 @@ const quick__links2=[
 
 
 const Footer = () => {
+
+const year = new Date().getFullYear;
+
   return (
     <footer className='footer'>
       <Container>
@@ -46,7 +49,7 @@ const Footer = () => {
           <Col lg='3'>
           <div className="logo">
             <img src={logo} alt="" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos dolore nobis delectus nemo voluptatum voluptate quas pariatur veniam fugiat eius, officia, earum dolores consequuntur incidunt cumque veritatis unde error in!</p>
+            <p>At Nepscape, we believe travel is more than just a vacation – it's about creating lifelong memories and experiencing new cultures. Join us on an adventure of a lifetime!</p>
 
             <div className="social__links d-flex align-items-center gap-4">
               <span>
@@ -90,7 +93,44 @@ const Footer = () => {
               }
             </ListGroup>
           </Col>
-          <Col lg='3'></Col>
+          <Col lg='3'>
+          <h5 className='footer__link-title'>Contact</h5>
+
+            <ListGroup className='footer__quick-links'>
+                  <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+                    <h6 className='mb-0 d-flex align-items-center gap-2'>
+                      <span>
+                        <i class="ri-map-pin-line"></i>
+                        Address:
+                      </span>
+                    </h6>
+                    <p className='mb-0'>Maitidevi, Kathmandu</p>
+                  </ListGroupItem>
+
+                  <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+                    <h6 className='mb-0 d-flex align-items-center gap-2'>
+                      <span>
+                      <i class="ri-mail-line"></i>
+                        Email:
+                      </span>
+                    </h6>
+                    <p className='mb-0'>sharmakhilesh1432@gmail.com</p>
+                  </ListGroupItem>
+
+                  <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+                    <h6 className='mb-0 d-flex align-items-center gap-2'>
+                      <span>
+                        <i class="ri-phone-fill"></i>
+                        Phone:
+                      </span>
+                    </h6>
+                    <p className='mb-0'>+977 9803062084</p>
+                  </ListGroupItem>
+            </ListGroup>
+          </Col>
+          <Col lg="12" className='text-center pt-5'>
+              <p className='copyright'>Copyright {year}, Nepscape</p>
+          </Col>
         </Row>
       </Container>
     </footer>
