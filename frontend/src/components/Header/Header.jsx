@@ -13,7 +13,7 @@ const nav__links=[
         display: 'Home'
     },
     {
-        path: '#',
+        path: '/aboutus',
         display: 'About'
     },
     {

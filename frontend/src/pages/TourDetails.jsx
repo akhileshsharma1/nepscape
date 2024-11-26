@@ -41,7 +41,7 @@ const TourDetails = () => {
         }
 
         const reviewObj = {
-            username:user.username,
+            username:user?.username,
             reviewText,
             rating:tourRating
         }
@@ -55,7 +55,11 @@ const TourDetails = () => {
             body : JSON.stringify(reviewObj)
         })
 
-        const result = await res.json()
+        const result = await res.json();
+
+        if(!res.ok){
+            return alert(result.message);
+        }
         alert(result.message)
 
     }catch (err){
@@ -136,17 +140,17 @@ const TourDetails = () => {
                                                 <div className="w-100">
                                                     <div className="d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <h5>{reviews.username}</h5>
-                                                            <p>{new Date(reviews.createdAt).toLocaleDateString(
+                                                            <h5>{review.username}</h5>
+                                                            <p>{new Date(review.createdAt).toLocaleDateString(
                                                                 "en-US",options
                                                             )}
                                                             </p>
                                                         </div>
                                                         <span className='d-flex align-items-center'>
-                                                        {reviews.rating} <i class="ri-star-s-fill"></i>
+                                                        {review.rating} <i class="ri-star-s-fill"></i>
                                                         </span>
                                                     </div>
-                                                    <h6>{reviews.reviewText}</h6>
+                                                    <h6>{review.reviewText}</h6>
                                                 </div>
                                             </div>
                                         ))
